@@ -1,0 +1,46 @@
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: lmontserat;
+  line-height: 1.75;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, 
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

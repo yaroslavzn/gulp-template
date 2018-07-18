@@ -1,0 +1,48 @@
+%clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// REM
+// Define default font size
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+
+// retina
+
+@mixin retina {
+  @media screen and (-webkit-min-device-pixel-ratio: 1.5),
+  screen and (min-resolution: 144dpi) {
+    @content;
+  }
+
+}
+
+// breakpoint
+
+@mixin media($width, $type: max) {
+  @media only screen and ($type + -width: $width) {
+    @content;
+  }
+}
+
+@mixin font-face($font-name, $folder-name, $file-name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url("../fonts/#{$folder-name}/#{$file-name}.woff") format("woff"),
+    url("../fonts/#{$folder-name}/#{$file-name}.woff2") format("woff2");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
