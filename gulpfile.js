@@ -3,7 +3,7 @@ const gulp = require('gulp'),
       csso = require('gulp-csso'),
       server = require('browser-sync').create(),
       concat = require('gulp-concat'),
-      uglify = require('gulp-uglify');
+      uglify = require('gulp-uglify-es').default;
       imagemin = require('gulp-imagemin'),
       del = require('del'),
       sequence = require('gulp-sequence'),
@@ -150,8 +150,8 @@ gulp.task('html:copy', function() {
 
 // Copy fonts
 gulp.task('fonts:copy', function() {
-    gulp.src('src/fonts/**')
-        .pipe(gulp.dest('dist/fonts/'));
+    gulp.src('src/fonts/**/*')
+        .pipe(gulp.dest('dist/fonts'));
 })
 
 // Minimize dist styles
